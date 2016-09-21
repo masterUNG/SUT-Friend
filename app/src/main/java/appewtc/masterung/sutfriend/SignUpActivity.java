@@ -2,6 +2,7 @@ package appewtc.masterung.sutfriend;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.EditText;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -25,6 +26,19 @@ public class SignUpActivity extends AppCompatActivity {
         passwordEditText = (EditText) findViewById(R.id.editText5);
 
     }   // Main Method
+
+    public void clickSignUpSign(View view) {
+
+        // Get Value From Edit Text
+        nameString = nameEditText.getText().toString().trim();
+        addressString = addressEditText.getText().toString().trim();
+        phoneString = phoneEditText.getText().toString().trim();
+        userString = userEditText.getText().toString().trim();
+        passwordString = passwordEditText.getText().toString().trim();
+
+
+
+    }   // clickSign
 
 
 }   // Main Class
