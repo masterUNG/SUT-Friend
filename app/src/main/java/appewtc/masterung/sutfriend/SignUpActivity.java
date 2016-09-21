@@ -1,7 +1,10 @@
 package appewtc.masterung.sutfriend;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +18,8 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText nameEditText, addressEditText,
             phoneEditText, userEditText, passwordEditText;
     private String nameString, addressString, phoneString,
-            userString, passwordString, genderString, imageString;
+            userString, passwordString, genderString, imageString,
+            imagePathString, imageNameString;
     private RadioButton maleRadioButton, femaleRadioButton;
     private ImageView imageView;
 
@@ -57,11 +61,32 @@ public class SignUpActivity extends AppCompatActivity {
 
             Log.d("SutFriendV1", "Result ==> Success");
 
+            //Find Path of Image
+            Uri uri = data.getData();
+            imagePathString = myFindPath(uri);
 
 
         }   // if
 
     }   // onActivityResult
+
+    private String myFindPath(Uri uri) {
+
+        String strResult = null;
+
+        String[] strings = {MediaStore.Images.Media.DATA};
+        Cursor cursor = getContentResolver().query(uri, strings, null, null, null);
+
+        if () {
+
+        } else {
+
+        }
+
+
+
+        return strResult;
+    }
 
     public void clickSignUpSign(View view) {
 
