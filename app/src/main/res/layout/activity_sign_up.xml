@@ -30,7 +30,8 @@
             android:id="@+id/textView"
             android:textSize="@dimen/h1"
             android:textStyle="bold"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/aText" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -43,13 +44,15 @@
                 android:text="New Text"
                 android:id="@+id/textView2"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2" />
+                android:layout_weight="2"
+                android:textColor="@color/aText" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textColor="@color/aText" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,7 +78,8 @@
                     android:text="Gender :"
                     android:id="@+id/textView3"
                     android:textSize="@dimen/h1"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/aText" />
 
                 <RadioGroup
                     android:layout_width="wrap_content"
@@ -86,13 +90,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Male"
-                        android:id="@+id/radioButton" />
+                        android:id="@+id/radioButton"
+                        android:textColor="@color/aText" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Female"
-                        android:id="@+id/radioButton2" />
+                        android:id="@+id/radioButton2"
+                        android:textColor="@color/aText" />
                 </RadioGroup>
             </LinearLayout>
         </LinearLayout>
@@ -108,13 +114,15 @@
                 android:text="Address :"
                 android:id="@+id/textView4"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2" />
+                android:layout_weight="2"
+                android:textColor="@color/aText" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText2"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textColor="@color/aText" />
         </LinearLayout>
 
         <LinearLayout
@@ -128,13 +136,15 @@
                 android:text="Phone :"
                 android:id="@+id/textView5"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2" />
+                android:layout_weight="2"
+                android:textColor="@color/aText" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText3"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textColor="@color/aText" />
         </LinearLayout>
 
         <LinearLayout
@@ -148,13 +158,15 @@
                 android:text="User :"
                 android:id="@+id/textView6"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2" />
+                android:layout_weight="2"
+                android:textColor="@color/aText" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText4"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textColor="@color/aText" />
         </LinearLayout>
 
         <LinearLayout
@@ -168,13 +180,15 @@
                 android:text="Password :"
                 android:id="@+id/textView7"
                 android:textSize="@dimen/h2"
-                android:layout_weight="2" />
+                android:layout_weight="2"
+                android:textColor="@color/aText" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText5"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textColor="@color/aText" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
