@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -12,6 +13,7 @@ public class SignUpActivity extends AppCompatActivity {
             phoneEditText, userEditText, passwordEditText;
     private String nameString, addressString, phoneString,
             userString, passwordString, genderString, imageString;
+    private RadioButton maleRadioButton, femaleRadioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class SignUpActivity extends AppCompatActivity {
         phoneEditText = (EditText) findViewById(R.id.editText3);
         userEditText = (EditText) findViewById(R.id.editText4);
         passwordEditText = (EditText) findViewById(R.id.editText5);
+        maleRadioButton = (RadioButton) findViewById(R.id.radioButton);
+        femaleRadioButton = (RadioButton) findViewById(R.id.radioButton2);
 
     }   // Main Method
 
@@ -42,6 +46,11 @@ public class SignUpActivity extends AppCompatActivity {
             //Have Space
             MyAlert myAlert = new MyAlert(this, R.drawable.doremon48,
                     "มีช่องว่าง", "กรุณากรอกทุกช่อง คะ");
+            myAlert.myDialog();
+        } else if (!(maleRadioButton.isChecked() || femaleRadioButton.isChecked())) {
+            //Non Check
+            MyAlert myAlert = new MyAlert(this, R.drawable.nobita48,
+                    "ยังไม่เลือก Gender", "กรุณาเลือก Gender");
             myAlert.myDialog();
         }
 
