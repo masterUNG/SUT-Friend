@@ -1,5 +1,6 @@
 package appewtc.masterung.sutfriend;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -140,10 +141,27 @@ public class SignUpActivity extends AppCompatActivity {
 
         } else {
 
+            confirmData();
+
         }
 
 
     }   // clickSign
+
+    private void confirmData() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setIcon(R.drawable.kon48);
+        builder.setTitle("โปรดตรวจทานข้อมูล");
+        builder.setMessage("ชื่อ = " + nameString + "\n" +
+        "ที่อยู่ = " + addressString + "\n" +
+        "Phone = " + phoneString + "\n" +
+        "Gender = " + genderString);
+
+
+
+    }   // confirmData
 
 
 }   // Main Class
