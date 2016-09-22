@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
     private RadioButton maleRadioButton, femaleRadioButton;
     private ImageView imageView;
     private boolean statusABoolean = true;
+    private RadioGroup radioGroup;
 
 
 
@@ -44,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
         maleRadioButton = (RadioButton) findViewById(R.id.radioButton);
         femaleRadioButton = (RadioButton) findViewById(R.id.radioButton2);
         imageView = (ImageView) findViewById(R.id.imageView);
+        radioGroup = (RadioGroup) findViewById(R.id.ragGender);
 
         //ImageView Controller
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +59,25 @@ public class SignUpActivity extends AppCompatActivity {
 
             }   // onClick
         });
+
+        //Radio Controller
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                switch (i) {
+
+                    case R.id.radioButton:
+                        genderString = "Male";
+                        break;
+                    case R.id.radioButton2:
+                        genderString = "Femail";
+                        break;
+                }
+
+            }   // onCheck
+        });
+
 
 
     }   // Main Method
