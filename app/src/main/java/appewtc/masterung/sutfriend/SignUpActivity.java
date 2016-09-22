@@ -108,6 +108,9 @@ public class SignUpActivity extends AppCompatActivity {
 
             statusABoolean = false;
 
+            imageNameString = imagePathString.substring(imagePathString.lastIndexOf("/"));
+            Log.d("SutFriendV1", "imageNameSting ==> " + imageNameString);
+
 
         }   // if
 
@@ -201,7 +204,6 @@ public class SignUpActivity extends AppCompatActivity {
 
 
 }   // Main Class
-
 
 
 
