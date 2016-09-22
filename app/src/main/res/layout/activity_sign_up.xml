@@ -53,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText"
                 android:layout_weight="1"
-                android:textColor="@color/aText" />
+                android:textColor="@color/aText"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -123,7 +124,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText2"
                 android:layout_weight="1"
-                android:textColor="@color/aText" />
+                android:textColor="@color/aText"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -145,7 +147,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText3"
                 android:layout_weight="1"
-                android:textColor="@color/aText" />
+                android:textColor="@color/aText"
+                android:inputType="number" />
         </LinearLayout>
 
         <LinearLayout
@@ -167,7 +170,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText4"
                 android:layout_weight="1"
-                android:textColor="@color/aText" />
+                android:textColor="@color/aText"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -189,7 +193,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText5"
                 android:layout_weight="1"
-                android:textColor="@color/aText" />
+                android:textColor="@color/aText"
+                android:inputType="text" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

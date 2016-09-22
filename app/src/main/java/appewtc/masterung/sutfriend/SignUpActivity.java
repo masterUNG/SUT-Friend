@@ -228,7 +228,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         //Explicit
         private Context context;
-        private static final String urlPHP = "http://swiftcodingthai.com/Sut/add_user_master.php";
+        private static final String urlPHP = "http://swiftcodingthai.com/Sut/add_user.php";
 
         public SaveUserToServer(Context context) {
             this.context = context;
