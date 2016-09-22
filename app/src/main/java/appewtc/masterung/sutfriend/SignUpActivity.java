@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
@@ -256,6 +257,7 @@ public class SignUpActivity extends AppCompatActivity {
                 return response.body().string();
 
             } catch (Exception e) {
+                Log.d("SutFriendV2", "e==> " + e.toString());
                 return null;
             }
 
@@ -266,6 +268,15 @@ public class SignUpActivity extends AppCompatActivity {
             super.onPostExecute(s);
 
             Log.d("SutFriendV2", "Result ==> " + s);
+
+            if (Boolean.parseBoolean(s)) {
+                Toast.makeText(context, "บันทึกข้อมูลเรียบร้อยแล้วคะ", Toast.LENGTH_SHORT).show();
+                finish();
+            } else {
+                MyAlert myAlert = new MyAlert(context, R.drawable.rat48,
+                        "Error", "ไม่สามารถบันทักได้");
+
+            }
 
         }   // onPost
 
