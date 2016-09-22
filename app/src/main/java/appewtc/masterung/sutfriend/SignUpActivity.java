@@ -24,6 +24,9 @@ public class SignUpActivity extends AppCompatActivity {
             imagePathString, imageNameString;
     private RadioButton maleRadioButton, femaleRadioButton;
     private ImageView imageView;
+    private boolean statusABoolean = true;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,8 @@ public class SignUpActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            statusABoolean = false;
+
 
         }   // if
 
@@ -127,6 +132,14 @@ public class SignUpActivity extends AppCompatActivity {
             MyAlert myAlert = new MyAlert(this, R.drawable.nobita48,
                     "ยังไม่เลือก Gender", "กรุณาเลือก Gender");
             myAlert.myDialog();
+        } else if (statusABoolean) {
+            //Non Choose Image
+            MyAlert myAlert = new MyAlert(this, R.drawable.bird48,
+                    "ยังไม่เลือก รูปภาพ", "กรุณาเลือกรูปภาพด้วยคะ");
+            myAlert.myDialog();
+
+        } else {
+
         }
 
 
