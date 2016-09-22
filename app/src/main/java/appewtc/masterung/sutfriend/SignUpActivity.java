@@ -1,12 +1,14 @@
 package appewtc.masterung.sutfriend;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.provider.MediaStore;
@@ -17,6 +19,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
 import org.jibble.simpleftp.SimpleFTP;
 
@@ -199,6 +207,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 upLoadImageToServer();
+                upLoadStringToServer();
                 dialogInterface.dismiss();
             }
         });
@@ -207,6 +216,61 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     }   // confirmData
+
+    private void upLoadStringToServer() {
+
+        SaveUserToServer saveUserToServer = new SaveUserToServer(this);
+        saveUserToServer.execute();
+
+    }   // upLoadString
+
+    private class SaveUserToServer extends AsyncTask<Void, Void, String> {
+
+        //Explicit
+        private Context context;
+        private static final String urlPHP = "http://swiftcodingthai.com/Sut/add_user_master.php";
+
+        public SaveUserToServer(Context context) {
+            this.context = context;
+        }   // Constructor
+
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            try {
+
+                OkHttpClient okHttpClient = new OkHttpClient();
+                RequestBody requestBody = new FormEncodingBuilder()
+                        .add("isAdd", "true")
+                        .add("Name", nameString)
+                        .add("Image", "http://swiftcodingthai.com/Sut/Image" + imageNameString)
+                        .add("Gender", genderString)
+                        .add("Address", addressString)
+                        .add("Phone", phoneString)
+                        .add("User", userString)
+                        .add("Password", passwordString)
+                        .build();
+                Request.Builder builder = new Request.Builder();
+                Request request = builder.url(urlPHP).post(requestBody).build();
+                Response response = okHttpClient.newCall(request).execute();
+                return response.body().string();
+
+            } catch (Exception e) {
+                return null;
+            }
+
+        }   // doInBack
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            Log.d("SutFriendV2", "Result ==> " + s);
+
+        }   // onPost
+
+    }   // SaveUser
+
 
     private void upLoadImageToServer() {
 
