@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile files('libs/simpleftp.jar')
     compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile files('libs/picasso-2.5.2.jar')
 }

@@ -35,6 +35,10 @@ public class ServiceActivity extends AppCompatActivity {
         //Show Text
         textView.setText("Welcome " + loginString);
 
+        //Show ListView
+        MyAdapter myAdapter = new MyAdapter(this, nameStrings, genderStrings, imageStrings);
+        listView.setAdapter(myAdapter);
+
     }   // Main Method
 
 }   // Main Class
