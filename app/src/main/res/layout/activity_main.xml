@@ -70,5 +70,15 @@
             android:textColor="@color/aText"
             android:textColorHint="@color/aText"
             android:textSize="@dimen/h2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Developer by Master UNG"
+            android:id="@+id/textView15"
+            android:layout_marginTop="20dp"
+            android:textColor="#f11e1e"
+            android:clickable="true"
+            android:onClick="clickWebSite" />
     </LinearLayout>
 </RelativeLayout>
