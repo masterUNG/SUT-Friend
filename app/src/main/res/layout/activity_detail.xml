@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="appewtc.masterung.sutfriend.DetailActivity">
+    tools:context="appewtc.masterung.sutfriend.DetailActivity"
+    android:background="@drawable/bg10">
 
     <Button
         android:layout_width="match_parent"
@@ -33,27 +34,31 @@
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@+id/textView11"
-            android:textSize="@dimen/h1" />
+            android:textSize="@dimen/h1"
+            android:textColor="@color/aText" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@+id/textView12"
-            android:textSize="@dimen/h2" />
+            android:textSize="@dimen/h2"
+            android:textColor="@color/aText" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@+id/textView13"
-            android:textSize="@dimen/h2" />
+            android:textSize="@dimen/h2"
+            android:textColor="@color/aText" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
             android:id="@+id/textView14"
-            android:textSize="@dimen/h2" />
+            android:textSize="@dimen/h2"
+            android:textColor="@color/aText" />
     </LinearLayout>
 </RelativeLayout>
