@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -103,10 +104,23 @@ public class MainActivity extends AppCompatActivity {
 
                         statusABoolean = false;
                         truePasswordString = passwordStrings[i];
+                        nameString = nameStrings[i];
 
                     }   // if
-
                 }   // for
+
+                if (statusABoolean) {
+                    MyAlert myAlert = new MyAlert(context, R.drawable.nobita48,
+                            "User False", "No " + userString + " in my Database");
+                } else if (!(passwordString.equals(truePasswordString))) {
+                    // Password False
+                    MyAlert myAlert = new MyAlert(context, R.drawable.rat48,
+                            "Password False", "Please Try Again Password False");
+                } else {
+                    // Password True
+                    Toast.makeText(context, "Welcome " + nameString,
+                            Toast.LENGTH_SHORT).show();
+                }
 
 
             } catch (Exception e) {
