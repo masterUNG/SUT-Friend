@@ -3,8 +3,8 @@ package appewtc.masterung.sutfriend;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -12,6 +12,9 @@ import android.widget.EditText;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         //Explicit
         private Context context;
         private static final String urlJSON = "http://swiftcodingthai.com/Sut/get_data_master.php";
+        private boolean statusABoolean = true;
+        private String[] nameStrings, imageStrings, genderStrings, addressStrings,
+                phoneStrings, userStrings, passwordStrings;
+        private String nameString, truePasswordString;
+
 
         public SynchronizeData(Context context) {
             this.context = context;
@@ -64,6 +72,46 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(s);
 
             Log.d("SutFriendV3", "JSON ==> " + s);
+
+            try {
+
+                JSONArray jsonArray = new JSONArray(s);
+
+                //จองหน่วยความจำ
+                nameStrings = new String[jsonArray.length()];
+                imageStrings = new String[jsonArray.length()];
+                genderStrings = new String[jsonArray.length()];
+                addressStrings = new String[jsonArray.length()];
+                phoneStrings = new String[jsonArray.length()];
+                userStrings = new String[jsonArray.length()];
+                passwordStrings = new String[jsonArray.length()];
+
+                for (int i=0; i<jsonArray.length();i+=1) {
+
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    nameStrings[i] = jsonObject.getString("Name");
+                    imageStrings[i] = jsonObject.getString("Image");
+                    genderStrings[i] = jsonObject.getString("Gender");
+                    addressStrings[i] = jsonObject.getString("Address");
+                    phoneStrings[i] = jsonObject.getString("Phone");
+                    userStrings[i] = jsonObject.getString("User");
+                    passwordStrings[i] = jsonObject.getString("Password");
+
+                    //Check User
+                    if (userString.equals(userStrings[i])) {
+
+                        statusABoolean = false;
+                        truePasswordString = passwordStrings[i];
+
+                    }   // if
+
+                }   // for
+
+
+            } catch (Exception e) {
+                Log.d("SutFriendV4", "e onPost ==> " + e.toString());
+            }
 
 
         }   // onPost
