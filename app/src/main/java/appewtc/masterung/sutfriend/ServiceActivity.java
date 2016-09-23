@@ -32,6 +32,9 @@ public class ServiceActivity extends AppCompatActivity {
         addressStrings = getIntent().getStringArrayExtra("Address");
         phoneStrings = getIntent().getStringArrayExtra("Phone");
 
+        //Show Text
+        textView.setText("Welcome " + loginString);
+
     }   // Main Method
 
 }   // Main Class
