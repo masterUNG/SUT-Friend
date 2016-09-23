@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:id="@+id/button4"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:onClick="clickBack" />
 
     <LinearLayout
         android:orientation="vertical"
