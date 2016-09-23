@@ -112,10 +112,12 @@ public class MainActivity extends AppCompatActivity {
                 if (statusABoolean) {
                     MyAlert myAlert = new MyAlert(context, R.drawable.nobita48,
                             "User False", "No " + userString + " in my Database");
+                    myAlert.myDialog();
                 } else if (!(passwordString.equals(truePasswordString))) {
                     // Password False
                     MyAlert myAlert = new MyAlert(context, R.drawable.rat48,
                             "Password False", "Please Try Again Password False");
+                    myAlert.myDialog();
                 } else {
                     // Password True
                     Toast.makeText(context, "Welcome " + nameString,
